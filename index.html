@@ -1,287 +1,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rupesh Sonawane | DevOps & Cloud Engineer</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Rupesh Sonawane — Engineer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#fff;--g100:#f5f5f5;--g200:#e8e8e8;--g400:#9a9a9a;--g600:#5a5a5a;--sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-  <!-- SEO -->
-  <meta name="description" content="Rupesh Gorakhnath Sonawane - DevOps Engineer, Cloud Engineer, Full-Stack Developer, AI & Data Analyst Portfolio">
-  <meta name="keywords" content="DevOps Engineer, Cloud Engineer, Full Stack Developer, AI, Data Analyst, AWS, Docker">
-  <meta name="author" content="Rupesh Gorakhnath Sonawane">
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.logo{font-weight:700;font-size:18px;letter-spacing:.08em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-soc{display:flex;gap:20px}
+.nav-soc a{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.nav-soc a:hover{color:var(--white)}
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+/* HERO */
+#hero{min-height:100vh;padding-top:56px;display:flex;flex-direction:column}
+.hero-grid{flex:1;display:grid;grid-template-columns:1fr 460px 1fr;align-items:stretch;min-height:calc(100vh - 56px)}
 
-  <style>
-    :root {
-      --bg: #0b0f1a;
-      --card: rgba(255,255,255,0.08);
-      --accent: #4f46e5;
-      --accent2: #9333ea;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --glass: blur(12px);
-    }
+/* Left */
+.hl{padding:80px 44px 80px 64px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;opacity:0;transform:translateX(-28px);animation:sL .95s cubic-bezier(.22,1,.36,1) .15s forwards}
+.lbl{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--g400);margin-bottom:18px}
+.t-eng{font-size:clamp(46px,5.8vw,78px);font-weight:900;letter-spacing:-.035em;line-height:.9;color:var(--black);margin-bottom:32px}
+.hdesc{font-size:13.5px;line-height:1.82;color:var(--g600);max-width:290px}
+.hdesc strong{font-weight:600;color:var(--black)}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+/* Center */
+.hc{position:relative;overflow:hidden;opacity:0;animation:fIn .7s ease .05s forwards}
+.iw{width:100%;height:100%;position:relative}
+.ic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;clip-path:inset(0 50% 0 0);z-index:2}
+.ibw{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(100%) contrast(1.08);z-index:1}
+.sl{position:absolute;left:50%;top:5%;height:90%;width:1px;background:rgba(255,255,255,.55);z-index:10;transform:translateX(-50%)}
 
-    body {
-      background: radial-gradient(circle at top, #111827, var(--bg));
-      color: var(--text);
-      line-height: 1.6;
-    }
+/* Right */
+.hr{padding:80px 64px 80px 44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:relative;overflow:hidden;opacity:0;transform:translateX(28px);animation:sR .95s cubic-bezier(.22,1,.36,1) .15s forwards}
+.cbg{position:absolute;inset:0;padding:40px;font-family:var(--mono);font-size:9.5px;line-height:2.1;color:var(--black);opacity:.038;overflow:hidden;user-select:none;pointer-events:none;white-space:pre;z-index:0}
+.hr>*:not(.cbg){position:relative;z-index:1}
+.t-code{font-family:var(--mono);font-size:clamp(38px,4.8vw,68px);font-weight:700;letter-spacing:-.025em;line-height:.92;color:var(--black);margin-bottom:32px}
+.t-code .br{color:var(--g400);font-weight:300}
+.hdesc-code{font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--g600);max-width:270px}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+/* Scroll hint */
+.scrl{display:flex;justify-content:center;padding:16px 0 32px;opacity:0;animation:fIn 1s ease 1.2s forwards}
+.si{display:flex;flex-direction:column;align-items:center;gap:10px}
+.si span{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--g400)}
+.sb{width:1px;height:44px;background:var(--g200);overflow:hidden;position:relative}
+.sb::after{content:'';position:absolute;top:-100%;width:100%;height:100%;background:var(--black);animation:drp 1.8s ease-in-out infinite 1.4s}
 
-    section {
-      padding: 80px 8%;
-    }
+/* MARQUEE */
+.mq{border-top:1px solid var(--g200);border-bottom:1px solid var(--g200);overflow:hidden;padding:13px 0}
+.mt{display:flex;width:max-content;animation:mq 30s linear infinite}
+.mi{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g400);padding:0 44px;white-space:nowrap}
+.md{color:var(--g200)}
 
-    h1, h2, h3 {
-      font-weight: 700;
-    }
+/* SECTIONS */
+section:not(#hero,#skills,#contact){padding:128px 64px;max-width:1240px;margin:0 auto}
+#skills,#contact{padding:128px 64px}
+.stag{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--g400);margin-bottom:52px;display:flex;align-items:center;gap:18px}
+.stag::after{content:'';flex:0 0 48px;height:1px;background:var(--g200)}
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
+.ah{font-size:clamp(38px,4.2vw,58px);font-weight:900;letter-spacing:-.035em;line-height:1.02;color:var(--black)}
+.ah em{font-style:normal;color:var(--g400)}
+.ast{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--g200)}
+.st{padding:28px 20px 0 0;border-right:1px solid var(--g200)}
+.st:last-child{border-right:none;padding-left:20px;padding-right:0}
+.st:nth-child(2){padding-left:20px}
+.sn{font-size:38px;font-weight:900;letter-spacing:-.04em;color:var(--black);line-height:1;margin-bottom:6px}
+.sl2{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--g400)}
+.ab p{font-size:15px;line-height:1.82;color:var(--g600);margin-bottom:22px}
+.ab p strong{font-weight:600;color:var(--black)}
 
-    p {
-      color: var(--muted);
-    }
+/* SKILLS */
+#skills{background:var(--g100)}
+.ski{max-width:1240px;margin:0 auto}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--g200);border-left:1px solid var(--g200)}
+.skc{padding:40px 36px;border-right:1px solid var(--g200);border-bottom:1px solid var(--g200);background:var(--white);transition:background .2s}
+.skc:hover{background:var(--g100)}
+.skl{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--g400);margin-bottom:16px}
+.skt{font-size:22px;font-weight:800;letter-spacing:-.025em;color:var(--black);margin-bottom:20px}
+.skts{display:flex;flex-wrap:wrap;gap:8px}
+.skg{font-family:var(--mono);font-size:10.5px;color:var(--g600);border:1px solid var(--g200);padding:4px 11px;background:var(--white)}
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(11,15,26,0.7);
-      backdrop-filter: var(--glass);
-      padding: 15px 8%;
-      display: flex;
-      justify-content: space-between;
-      z-index: 1000;
-    }
+/* PROJECTS */
+.pl{margin-top:52px;border-top:1px solid var(--g200)}
+.pr{display:grid;grid-template-columns:64px 1fr 200px 120px;align-items:center;padding:36px 0;border-bottom:1px solid var(--g200);gap:44px;text-decoration:none;color:inherit;transition:opacity .2s}
+.pr:hover{opacity:.65}
+.pn{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--g400);letter-spacing:.08em}
+.pt{font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--black);margin-bottom:7px}
+.pd{font-size:13px;color:var(--g600);line-height:1.55}
+.ps{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.ps span{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;color:var(--g400);text-transform:uppercase}
+.pa{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--g400);text-align:right;letter-spacing:.1em}
 
-    nav a {
-      margin-left: 20px;
-      font-weight: 500;
-    }
+/* CONTACT */
+#contact{background:var(--black)}
+.ci{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.ch{font-size:clamp(52px,6.5vw,90px);font-weight:900;letter-spacing:-.04em;line-height:.93;color:var(--white)}
+.ch em{font-style:normal;color:rgba(255,255,255,.18)}
+.cls{display:flex;flex-direction:column}
+.cl{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;transition:opacity .2s}
+.cl:hover{opacity:.6}
+.cll{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:5px}
+.clv{font-size:15px;font-weight:500;color:var(--white)}
+.ca{font-size:20px;color:rgba(255,255,255,.22)}
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:22px 64px;display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:rgba(255,255,255,.2)}
 
-    .hero-content {
-      max-width: 700px;
-    }
+/* ANIMATIONS */
+@keyframes sL{to{opacity:1;transform:translateX(0)}}
+@keyframes sR{to{opacity:1;transform:translateX(0)}}
+@keyframes fIn{to{opacity:1}}
+@keyframes drp{0%{top:-100%}100%{top:100%}}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    .hero h1 {
-      font-size: 3.5rem;
-      background: linear-gradient(90deg, #4f46e5, #9333ea);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s,transform .75s}
+.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
-    .hero h3 {
-      margin: 20px 0;
-      font-weight: 400;
-    }
-
-    .btns {
-      margin-top: 30px;
-    }
-
-    .btn {
-      padding: 12px 24px;
-      border-radius: 8px;
-      margin-right: 10px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .btn.primary {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      color: white;
-    }
-
-    .btn.outline {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    /* CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: var(--card);
-      backdrop-filter: var(--glass);
-      padding: 25px;
-      border-radius: 14px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(79,70,229,0.2);
-    }
-
-    /* SKILLS */
-    .skill span {
-      display: inline-block;
-      margin: 6px 10px 6px 0;
-      padding: 6px 12px;
-      background: rgba(79,70,229,0.15);
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(255,255,255,0.03);
-      margin-top: 60px;
-    }
-
-    /* RESPONSIVE */
-    @media(max-width:768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr 380px 1fr}
+  .hl{padding:64px 32px 64px 40px}
+  .hr{padding:64px 40px 64px 32px}
+  .sg{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  nav{padding:0 20px}.nav-links{display:none}
+  #hero{min-height:auto}
+  .hero-grid{grid-template-columns:1fr;min-height:auto}
+  .hc{order:-1;height:70vw;min-height:300px}
+  .hl{order:0;text-align:left;align-items:flex-start;padding:40px 24px 20px;animation-name:fIn}
+  .hr{order:1;padding:20px 24px 48px;animation-name:fIn}
+  .hdesc,.hdesc-code{max-width:100%}
+  section:not(#hero,#skills,#contact){padding:80px 24px}
+  #skills,#contact{padding:80px 24px}
+  .ag{grid-template-columns:1fr;gap:44px}
+  .sg{grid-template-columns:1fr}
+  .pr{grid-template-columns:52px 1fr;gap:10px 16px;padding:24px 0}
+  .ps{grid-column:1/-1;justify-content:flex-start}
+  .pa{display:none}
+  .ci{grid-template-columns:1fr;gap:52px}
+  footer{padding:20px 24px;flex-direction:column;gap:6px;text-align:center}
+}
+</style>
 </head>
+<body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Rupesh Sonawane — Engineer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0a0a0a;--white:#fff;
+  --g100:#f5f5f5;--g200:#e8e8e8;--g400:#9a9a9a;--g600:#5a5a5a;
+  --sans:'Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',monospace
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ══════════════════ NAV ══════════════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--black);height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 48px}
+.logo{font-weight:700;font-size:18px;letter-spacing:.08em;color:var(--white);text-decoration:none}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-soc{display:flex;gap:20px}
+.nav-soc a{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.38);text-decoration:none;transition:color .2s}
+.nav-soc a:hover{color:var(--white)}
+
+/* ══════════════════ HERO ══════════════════ */
+#hero{
+  min-height:100vh;
+  padding-top:58px;
+  background:var(--white);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+.hero-stage{
+  flex:1;
+  display:grid;
+  /* Left text | portrait | Right text */
+  grid-template-columns:1fr 520px 1fr;
+  align-items:center;
+  min-height:calc(100vh - 58px);
+  position:relative;
+}
+
+/* ── LEFT PANEL ── */
+.h-left{
+  padding:60px 48px 60px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-end;
+  text-align:right;
+  opacity:0;
+  transform:translateX(-32px);
+  animation:slideL 1s cubic-bezier(.22,1,.36,1) .2s forwards;
+}
+
+.h-title-eng{
+  font-size:clamp(52px,6vw,82px);
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:.88;
+  color:var(--black);
+  margin-bottom:28px;
+  /* Intentionally lowercase like reference */
+  text-transform:lowercase;
+}
+
+.h-desc{
+  font-size:14px;
+  line-height:1.78;
+  color:var(--g600);
+  max-width:280px;
+}
+.h-desc strong{font-weight:600;color:var(--black)}
+
+/* ── CENTER PORTRAIT ── */
+.h-center{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  /* Image taller than viewport — overflows slightly like reference */
+  height:calc(100vh - 58px);
+  overflow:visible;
+  opacity:0;
+  animation:fadeUp .9s cubic-bezier(.22,1,.36,1) .05s forwards;
+}
+
+.portrait-wrap{
+  position:relative;
+  width:100%;
+  height:100%;
+  /* No clipping — image floats freely */
+}
+
+/* The actual photo — right (realistic) side */
+.img-real{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  z-index:1;
+}
+
+/* Left half mask — colorful artistic overlay */
+.img-art-mask{
+  position:absolute;
+  inset:0;
+  width:50%;  /* Only covers left half */
+  height:100%;
+  z-index:2;
+  overflow:hidden;
+}
+
+/* The artistic/painted version sits inside the mask */
+.img-art-mask img{
+  width:200%;  /* Full image width inside half-width container */
+  height:100%;
+  object-fit:cover;
+  object-position:left top;
+  filter:saturate(1.8) contrast(1.3) hue-rotate(-10deg);
+  mix-blend-mode:multiply;
+}
+
+/* Paint strokes overlay — CSS generated, matches reference */
+.paint-overlay{
+  position:absolute;
+  inset:0;
+  width:50%;
+  height:100%;
+  z-index:3;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* Hard vertical divider */
+.v-divide{
+  position:absolute;
+  left:50%;
+  top:4%;
+  height:92%;
+  width:2px;
+  background:var(--white);
+  z-index:20;
+  transform:translateX(-50%);
+  box-shadow:0 0 12px rgba(255,255,255,.8);
+}
+
+/* Faint code text on right side — exactly like reference */
+.code-ghost{
+  position:absolute;
+  right:0;
+  bottom:80px;
+  width:48%;
+  padding:0 24px;
+  font-family:var(--mono);
+  font-size:18px;
+  line-height:1.9;
+  color:var(--black);
+  opacity:.09;
+  user-select:none;
+  pointer-events:none;
+  text-align:left;
+  z-index:4;
+  white-space:pre;
+}
+
+/* ── RIGHT PANEL ── */
+.h-right{
+  padding:60px 64px 60px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  text-align:left;
+  opacity:0;
+  transform:translateX(32px);
+  animation:slideR 1s cubic-bezier(.22,1,.36,1) .2s forwards;
+}
+
+.h-title-code{
+  font-family:var(--mono);
+  font-size:clamp(44px,5.2vw,72px);
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:.88;
+  color:var(--black);
+  margin-bottom:28px;
+}
+.h-title-code .br{color:var(--g400);font-weight:300}
+
+.h-desc-code{
+  font-size:14px;
+  line-height:1.78;
+  color:var(--g600);
+  max-width:280px;
+}
+
+/* ══════════════════ MARQUEE ══════════════════ */
+.mq{border-top:1px solid var(--g200);border-bottom:1px solid var(--g200);overflow:hidden;padding:13px 0}
+.mt{display:flex;width:max-content;animation:marquee 30s linear infinite}
+.mi{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--g400);padding:0 44px;white-space:nowrap}
+.md{color:var(--g200)}
+
+/* ══════════════════ ABOUT ══════════════════ */
+#about{padding:128px 64px;max-width:1240px;margin:0 auto}
+.stag{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--g400);margin-bottom:52px;display:flex;align-items:center;gap:18px}
+.stag::after{content:'';flex:0 0 48px;height:1px;background:var(--g200)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
+.ah{font-size:clamp(38px,4.2vw,58px);font-weight:900;letter-spacing:-.035em;line-height:1.02;color:var(--black)}
+.ah em{font-style:normal;color:var(--g400)}
+.ast{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--g200)}
+.st{padding:28px 20px 0 0;border-right:1px solid var(--g200)}
+.st:last-child{border-right:none;padding-left:20px;padding-right:0}
+.st:nth-child(2){padding-left:20px}
+.stn{font-size:38px;font-weight:900;letter-spacing:-.04em;color:var(--black);line-height:1;margin-bottom:6px}
+.stl{font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--g400)}
+.ab p{font-size:15px;line-height:1.82;color:var(--g600);margin-bottom:22px}
+.ab p strong{font-weight:600;color:var(--black)}
+
+/* ══════════════════ SKILLS ══════════════════ */
+#skills{background:var(--g100);padding:128px 64px}
+.ski{max-width:1240px;margin:0 auto}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--g200);border-left:1px solid var(--g200)}
+.skc{padding:40px 36px;border-right:1px solid var(--g200);border-bottom:1px solid var(--g200);background:var(--white);transition:background .2s}
+.skc:hover{background:var(--g100)}
+.skl{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--g400);margin-bottom:16px}
+.skt{font-size:22px;font-weight:800;letter-spacing:-.025em;color:var(--black);margin-bottom:20px}
+.skts{display:flex;flex-wrap:wrap;gap:8px}
+.skg{font-family:var(--mono);font-size:10.5px;color:var(--g600);border:1px solid var(--g200);padding:4px 11px;background:var(--white)}
+
+/* ══════════════════ PROJECTS ══════════════════ */
+#projects{padding:128px 64px;max-width:1240px;margin:0 auto}
+.pl{margin-top:52px;border-top:1px solid var(--g200)}
+.pr{display:grid;grid-template-columns:64px 1fr 200px 120px;align-items:center;padding:36px 0;border-bottom:1px solid var(--g200);gap:44px;text-decoration:none;color:inherit;transition:opacity .2s}
+.pr:hover{opacity:.65}
+.pn{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--g400);letter-spacing:.08em}
+.pt{font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--black);margin-bottom:7px}
+.pd{font-size:13px;color:var(--g600);line-height:1.55}
+.ps{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.ps span{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;color:var(--g400);text-transform:uppercase}
+.pa{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--g400);text-align:right;letter-spacing:.1em}
+
+/* ══════════════════ CONTACT ══════════════════ */
+#contact{background:var(--black);padding:128px 64px}
+.ci{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
+.ch{font-size:clamp(52px,6.5vw,90px);font-weight:900;letter-spacing:-.04em;line-height:.93;color:var(--white)}
+.ch em{font-style:normal;color:rgba(255,255,255,.18)}
+.cls{display:flex;flex-direction:column}
+.cl{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;transition:opacity .2s}
+.cl:hover{opacity:.6}
+.cll{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:5px}
+.clv{font-size:15px;font-weight:500;color:var(--white)}
+.ca{font-size:20px;color:rgba(255,255,255,.22)}
+
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:22px 64px;display:flex;justify-content:space-between;align-items:center}
+footer p{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:rgba(255,255,255,.2)}
+
+/* ══════════════════ ANIMATIONS ══════════════════ */
+@keyframes slideL{to{opacity:1;transform:translateX(0)}}
+@keyframes slideR{to{opacity:1;transform:translateX(0)}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s,transform .75s}
+.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.h-intro{
+  font-family: var(--mono);
+  font-size: 15px;                 /* BIGGER */
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--g600);
+  margin-bottom: 36px;             /* SPACE before “engineer” */
+}
+.h-intro{
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 40px;
+}
+
+/* ══════════════════ RESPONSIVE ══════════════════ */
+@media(max-width:1100px){
+  .hero-stage{grid-template-columns:1fr 420px 1fr}
+  .h-left{padding:60px 36px 60px 40px}
+  .h-right{padding:60px 40px 60px 36px}
+}
+@media(max-width:800px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero-stage{grid-template-columns:1fr;min-height:auto}
+  .h-center{order:-1;height:80vw;min-height:320px}
+  .h-left{order:0;text-align:left;align-items:flex-start;padding:36px 24px 20px;animation-name:fadeUp}
+  .h-right{order:1;padding:20px 24px 48px;animation-name:fadeUp}
+  .h-desc,.h-desc-code{max-width:100%}
+  #about,#projects{padding:80px 24px}
+  .ag{grid-template-columns:1fr;gap:44px}
+  #skills{padding:80px 24px}
+  .sg{grid-template-columns:1fr}
+  .pr{grid-template-columns:52px 1fr;gap:10px 16px;padding:24px 0}
+  .ps{grid-column:1/-1;justify-content:flex-start}
+  .pa{display:none}
+  #contact{padding:80px 24px}
+  .ci{grid-template-columns:1fr;gap:52px}
+  footer{padding:20px 24px;flex-direction:column;gap:6px;text-align:center}
+}
+</style>
+</head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <strong>Rupesh.dev</strong>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+  <a href="#hero" class="logo">RS</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-soc">
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Rupesh Gorakhnath Sonawane</h1>
-    <h3>DevOps Engineer • Cloud Engineer • Full-Stack Developer • AI & Data Analyst</h3>
-    <p>
-      I build scalable cloud systems, automate infrastructure, and develop intelligent full-stack applications
-      with real-world impact.
-    </p>
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-stage">
 
-    <div class="btns">
-      <button class="btn primary" onclick="document.getElementById('projects').scrollIntoView()">View Projects</button>
-      <button class="btn outline" onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
+    <!-- LEFT: Engineer -->
+    <div class="h-left"><p class="h-intro">hello, i’m rupesh sonawane</p>
+
+
+      <h1 class="h-title-eng">engineer</h1>
+      <p class="h-desc">
+        <strong>Front-End Developer</strong> and DevOps enthusiast with experience deploying cloud-based applications and working with <strong>AWS, Linux, Docker,</strong> and AI-driven systems. Focused on writing clean code and building scalable, real-world solutions.
+      </p>
+    </div>
+
+    <!-- CENTER: Split portrait -->
+    <div class="h-center">
+      <div class="portrait-wrap">
+
+        <!--
+          HOW THE SPLIT WORKS:
+          img-real    = your photo (full width, sits behind)
+          img-art-mask = same photo but with heavy color filters, clipped to left 50%
+          v-divide    = white 2px line at center
+          code-ghost  = faint code text on right side
+
+          REPLACE BOTH src= with your own photo URL.
+        -->
+
+        <!-- Full realistic photo (right side shows through) -->
+        <img 
+          src="image.png"
+          alt="Rupesh Sonawane"/>
+
+        
+
+        <!-- CSS paint strokes — mimics the brushstroke art style in reference -->
+        <svg class="paint-overlay" viewBox="0 0 260 800" preserveAspectRatio="xMidYMid slice"
+          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Bold teal/cyan stroke -->
+          <ellipse cx="80" cy="290" rx="110" ry="28" fill="#5ecbcb" opacity=".7" transform="rotate(-18 80 290)"/>
+          <!-- Red stroke across face -->
+          <ellipse cx="120" cy="230" rx="90" ry="22" fill="#e03a3a" opacity=".65" transform="rotate(8 120 230)"/>
+          <!-- Warm yellow lower -->
+          <ellipse cx="60" cy="420" rx="120" ry="24" fill="#f0c040" opacity=".6" transform="rotate(-12 60 420)"/>
+          <!-- Teal body stroke -->
+          <ellipse cx="100" cy="560" rx="130" ry="30" fill="#3abcbc" opacity=".55" transform="rotate(6 100 560)"/>
+          <!-- Red accent body -->
+          <ellipse cx="40" cy="620" rx="80" ry="18" fill="#e03a3a" opacity=".5" transform="rotate(-20 40 620)"/>
+          <!-- Black graphic contour strokes (like the halftone/ink in reference) -->
+          <ellipse cx="140" cy="180" rx="60" ry="14" fill="#111" opacity=".55" transform="rotate(5 140 180)"/>
+          <ellipse cx="30" cy="350" rx="50" ry="12" fill="#111" opacity=".45" transform="rotate(-15 30 350)"/>
+          <ellipse cx="160" cy="480" rx="70" ry="16" fill="#111" opacity=".35" transform="rotate(10 160 480)"/>
+          <!-- Extra color pops -->
+          <ellipse cx="200" cy="340" rx="55" ry="16" fill="#f0c040" opacity=".4" transform="rotate(-8 200 340)"/>
+          <ellipse cx="180" cy="500" rx="65" ry="18" fill="#5ecbcb" opacity=".38" transform="rotate(14 180 500)"/>
+        </svg>
+
+        <!-- Hard vertical white dividing line -->
+        <div class="v-divide"></div>
+
+        <!-- Faint code on right side — exactly like reference -->
+        <div class="code-ghost">&lt;html&gt;
+height:184px;
+class="rupesh"
+CSS3  HTML5
+color:#000;
+  jQuery
+&lt;/html&gt;</div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: <coder> -->
+    <div class="h-right">
+      <h2 class="h-title-code">
+        <span class="br">&lt;</span>coder<span class="br">&gt;</span>
+      </h2>
+      <p class="h-desc-code">
+        Front-End Developer &amp; DevOps learner focused on building scalable, efficient, and cloud-ready applications.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mt">
+    <span class="mi">Front-End Development <span class="md">·</span></span>
+    <span class="mi">Cloud Architecture <span class="md">·</span></span>
+    <span class="mi">DevOps <span class="md">·</span></span>
+    <span class="mi">AWS <span class="md">·</span></span>
+    <span class="mi">Docker <span class="md">·</span></span>
+    <span class="mi">Linux <span class="md">·</span></span>
+    <span class="mi">React <span class="md">·</span></span>
+    <span class="mi">AI Systems <span class="md">·</span></span>
+    <span class="mi">Clean Code <span class="md">·</span></span>
+    <span class="mi">Scalable Solutions <span class="md">·</span></span>
+    <span class="mi">Front-End Development <span class="md">·</span></span>
+    <span class="mi">Cloud Architecture <span class="md">·</span></span>
+    <span class="mi">DevOps <span class="md">·</span></span>
+    <span class="mi">AWS <span class="md">·</span></span>
+    <span class="mi">Docker <span class="md">·</span></span>
+    <span class="mi">Linux <span class="md">·</span></span>
+    <span class="mi">React <span class="md">·</span></span>
+    <span class="mi">AI Systems <span class="md">·</span></span>
+    <span class="mi">Clean Code <span class="md">·</span></span>
+    <span class="mi">Scalable Solutions <span class="md">·</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="stag rv">About</p>
+  <div class="ag">
+    <div class="rv d1">
+      <h2 class="ah">Building<br/>for the<br/><em>real world.</em></h2>
+      <div class="ast">
+        <div class="st"><div class="stn">0.8+</div><div class="stl">Years exp.</div></div>
+        <div class="st"><div class="stn">5+</div><div class="stl">Projects</div></div>
+        
+      </div>
+    </div>
+    <div class="ab rv d2">
+      <p>I'm <strong>Rupesh Gorakhnath Sonawane</strong>, a Front-End Developer and DevOps learner based in India. I work at the intersection of interface design and cloud infrastructure — writing code that not only looks precise, but deploys reliably and scales under real pressure.</p>
+      <p>My stack spans <strong>React, AWS, Docker, and Linux</strong>, with a growing focus on AI-integrated systems. I believe the best software is seamless — so well-engineered the user never notices the work underneath.</p>
+      <p>Currently building cloud-native architectures, CI/CD pipelines, and projects that solve actual problems rather than checking technical boxes.</p>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a B.Tech Computer Science Engineer from Maharashtra with strong hands-on experience in
-    DevOps, Cloud Computing, Full-Stack Development, and AI-driven systems.
-    I have worked on real-world projects involving AWS, Docker, CI/CD pipelines, machine learning,
-    and production-grade web applications.
-  </p>
-</section>
-
 <!-- SKILLS -->
 <section id="skills">
-  <h2>Skills</h2>
-  <div class="card skill">
-    <span>Java</span><span>Python</span><span>JavaScript</span>
-    <span>React</span><span>Spring Boot</span>
-    <span>Linux</span><span>AWS</span><span>Docker</span>
-    <span>CI/CD</span><span>CloudWatch</span>
-    <span>Machine Learning</span><span>Data Analysis</span>
-    <span>Git</span><span>GitHub</span><span>MySQL</span>
+  <div class="ski">
+    <p class="stag rv">Expertise</p>
+    <div class="sg">
+      <div class="skc rv d1"><div class="skl">01 / Core</div><div class="skt">Front-End</div><div class="skts"><span class="skg">React</span><span class="skg">HTML5</span><span class="skg">CSS3</span></div></div>
+      <div class="skc rv d2"><div class="skl">02 / Infra</div><div class="skt">DevOps</div><div class="skts"><span class="skg">Docker</span><span class="skg">Linux</span><span class="skg">CI/CD</span><span class="skg">GitHub Actions</span><span class="skg">Nginx</span><span class="skg">Bash</span></div></div>
+      <div class="skc rv d3"><div class="skl">03 / Cloud</div><div class="skt">AWS</div><div class="skts"><span class="skg">EC2</span><span class="skg">S3</span><span class="skg">Lambda</span><span class="skg">CloudFront</span><span class="skg">Route 53</span></div></div>
+      <div class="skc rv d1"><div class="skl">04 / Backend</div><div class="skt">Server</div><div class="skts"><span class="skg">Node.js</span><span class="skg">Python</span><span class="skg">REST APIs</span></div></div>
+      <div class="skc rv d3"><div class="skl">06 / Tools</div><div class="skt">Toolchain</div><div class="skts"><span class="skg">Git</span><span class="skg">VS Code</span><span class="skg">Vercel</span></div></div>
+    </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>AI Emotion Detection System</h3>
-      <p>Real-time emotion recognition using ML with intelligent recommendations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Leaf Disease Detection</h3>
-      <p>ML-based system to identify plant diseases from leaf images.</p>
-    </div>
-
-    <div class="card">
-      <h3>Hand Gesture & Emotion Detection</h3>
-      <p>Computer vision based human-computer interaction system.</p>
-    </div>
-
-    <div class="card">
-      <h3>Personal AI Assistant</h3>
-      <p>Smart assistant capable of task automation and intelligent responses.</p>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Zideo Development</h3>
-      <p>Data Analyst Intern – AI Emotion Detection Project</p>
-    </div>
-
-    <div class="card">
-      <h3>Code Alpha</h3>
-      <p>Data Science Intern – Leaf Disease Detection</p>
-    </div>
+  <p class="stag rv">Selected Work</p>
+  <div class="pl rv">
+    <a class="pr" href="#"><div class="pn">01</div><div><div class="pt">Cloud-Native Dashboard</div><div class="pd">Real-time analytics dashboard deployed on AWS with auto-scaling EC2 and CloudFront CDN integration.</div></div><div class="ps"><span>React</span><span>AWS</span><span>Docker</span><span>Node.js</span></div><div class="pa">View ↗</div></a>
+    <a class="pr" href="#"><div class="pn">02</div><div><div class="pt">AI Chat Interface</div><div class="pd">Production-grade front-end for LLM APIs with streaming responses, conversation history, and minimal UI.</div></div><div class="ps"><span>React</span><span>LLM API</span><span>Python</span></div><div class="pa">View ↗</div></a>
+    <a class="pr" href="#"><div class="pn">03</div><div><div class="pt">DevOps Pipeline</div><div class="pd">CI/CD automation using GitHub Actions, Docker containers, and zero-downtime deployment to EC2 instances.</div></div><div class="ps"><span>Docker</span><span>GitHub Actions</span><span>Linux</span><span>AWS</span></div><div class="pa">View ↗</div></a>
+    <a class="pr" href="#"><div class="pn">04</div><div><div class="pt">Serverless Portfolio CMS</div><div class="pd">Headless CMS with serverless functions and edge caching. Sub-100ms TTFB globally via CloudFront.</div></div><div class="ps"><span>Next.js</span><span>Lambda</span><span>S3</span></div><div class="pa">View ↗</div></a>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: your@email.com</p>
-    <p>GitHub: github.com/yourusername</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-    <p>Location: Chh. Sambhajinagar, Maharashtra, India</p>
+  <div class="ci">
+    <h2 class="ch rv">Let's<br/>build<br/>something<br/><em>real.</em></h2>
+    <div class="cls rv d2">
+      <a class="cl" href="mailto:rupeshsonawane@gmail.com"><div><div class="cll">Email</div><div class="clv">rupeshsonawane346@gmail.com</div></div><span class="ca">↗</span></a>
+      <a class="cl" href="https://github.com/rupeshsonawane00012" target="_blank" rel="noopener"><div><div class="cll">GitHub</div><div class="clv">github.com/rupesh</div></div><span class="ca">↗</span></a>
+      <a class="cl" href="https://www.linkedin.com/in/rupesh-sonawane12/" target="_blank" rel="noopener"><div><div class="cll">LinkedIn</div><div class="clv">linkedin.com/in/rupesh</div></div><span class="ca">↗</span></a>
+      <a class="cl" href="#"><div><div class="cll">Resume</div><div class="clv">Download PDF</div></div><span class="ca">↓</span></a>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Rupesh Sonawane • Built for Top-Tier Engineering Roles
+  <p>© 2025 Rupesh Gorakhnath Sonawane</p>
+  <p>Front-End · DevOps · Cloud · AI</p>
+  <p>Pune, Maharashtra, IN</p>
 </footer>
 
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const secs=document.querySelectorAll('section[id]');
+const nas=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id});
+  nas.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'rgba(255,255,255,.95)':'rgba(255,255,255,.5)'});
+},{passive:true});
+</script>
 </body>
-</html>
