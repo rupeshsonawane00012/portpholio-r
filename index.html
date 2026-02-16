@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rupesh Sonawane | DevOps & Cloud Engineer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Rupesh Gorakhnath Sonawane - DevOps Engineer, Cloud Engineer, Full-Stack Developer, AI & Data Analyst Portfolio">
+  <meta name="keywords" content="DevOps Engineer, Cloud Engineer, Full Stack Developer, AI, Data Analyst, AWS, Docker">
+  <meta name="author" content="Rupesh Gorakhnath Sonawane">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: rgba(255,255,255,0.08);
+      --accent: #4f46e5;
+      --accent2: #9333ea;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --glass: blur(12px);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111827, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 80px 8%;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(11,15,26,0.7);
+      backdrop-filter: var(--glass);
+      padding: 15px 8%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #4f46e5, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h3 {
+      margin: 20px 0;
+      font-weight: 400;
+    }
+
+    .btns {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin-right: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: white;
+    }
+
+    .btn.outline {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: var(--glass);
+      padding: 25px;
+      border-radius: 14px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(79,70,229,0.2);
+    }
+
+    /* SKILLS */
+    .skill span {
+      display: inline-block;
+      margin: 6px 10px 6px 0;
+      padding: 6px 12px;
+      background: rgba(79,70,229,0.15);
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(255,255,255,0.03);
+      margin-top: 60px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <strong>Rupesh.dev</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Rupesh Gorakhnath Sonawane</h1>
+    <h3>DevOps Engineer • Cloud Engineer • Full-Stack Developer • AI & Data Analyst</h3>
+    <p>
+      I build scalable cloud systems, automate infrastructure, and develop intelligent full-stack applications
+      with real-world impact.
+    </p>
+
+    <div class="btns">
+      <button class="btn primary" onclick="document.getElementById('projects').scrollIntoView()">View Projects</button>
+      <button class="btn outline" onclick="document.getElementById('contact').scrollIntoView()">Contact Me</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a B.Tech Computer Science Engineer from Maharashtra with strong hands-on experience in
+    DevOps, Cloud Computing, Full-Stack Development, and AI-driven systems.
+    I have worked on real-world projects involving AWS, Docker, CI/CD pipelines, machine learning,
+    and production-grade web applications.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skill">
+    <span>Java</span><span>Python</span><span>JavaScript</span>
+    <span>React</span><span>Spring Boot</span>
+    <span>Linux</span><span>AWS</span><span>Docker</span>
+    <span>CI/CD</span><span>CloudWatch</span>
+    <span>Machine Learning</span><span>Data Analysis</span>
+    <span>Git</span><span>GitHub</span><span>MySQL</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AI Emotion Detection System</h3>
+      <p>Real-time emotion recognition using ML with intelligent recommendations.</p>
+    </div>
+
+    <div class="card">
+      <h3>Leaf Disease Detection</h3>
+      <p>ML-based system to identify plant diseases from leaf images.</p>
+    </div>
+
+    <div class="card">
+      <h3>Hand Gesture & Emotion Detection</h3>
+      <p>Computer vision based human-computer interaction system.</p>
+    </div>
+
+    <div class="card">
+      <h3>Personal AI Assistant</h3>
+      <p>Smart assistant capable of task automation and intelligent responses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Zideo Development</h3>
+      <p>Data Analyst Intern – AI Emotion Detection Project</p>
+    </div>
+
+    <div class="card">
+      <h3>Code Alpha</h3>
+      <p>Data Science Intern – Leaf Disease Detection</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: your@email.com</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    <p>Location: Chh. Sambhajinagar, Maharashtra, India</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rupesh Sonawane • Built for Top-Tier Engineering Roles
+</footer>
+
+</body>
+</html>
